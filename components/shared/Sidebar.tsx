@@ -27,13 +27,14 @@ const Sidebar = () => {
                                     isActive ? 'bg-purple-gradient text-white' : 'text-gray-700'
                                 }`}>
                                     <Link className='sidebar-link' href={link.route}>
-                                        <Image 
+                                        {/* <Image 
                                             src={link.icon}
                                             alt='logo'
                                             width={24}
                                             height={24}
                                             className={`${isActive && 'brightness-200'}`}
-                                        />
+                                        /> */}
+                                        <h1>GAIALY</h1>
                                         {link.label}
                                     </Link>
                                 </li>
