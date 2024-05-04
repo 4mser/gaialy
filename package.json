@@ -21,9 +21,11 @@
     "@react-three/fiber": "^8.16.3",
     "@react-three/postprocessing": "^2.16.2",
     "@stripe/stripe-js": "^3.3.0",
+    "apexcharts": "^3.49.0",
     "class-variance-authority": "^0.7.0",
     "cloudinary": "^2.1.0",
     "clsx": "^2.1.0",
+    "d3": "^7.9.0",
     "framer-motion": "^11.1.7",
     "lucide-react": "^0.364.0",
     "mongodb": "^6.5.0",
@@ -32,6 +34,7 @@
     "next-cloudinary": "^6.5.0",
     "qs": "^6.12.0",
     "react": "^18",
+    "react-apexcharts": "^1.4.1",
     "react-dom": "^18",
     "react-hook-form": "^7.51.3",
     "stripe": "^15.1.0",
@@ -42,6 +45,7 @@
     "zod": "^3.22.4"
   },
   "devDependencies": {
+    "@types/d3": "^7.4.3",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

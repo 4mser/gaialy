@@ -182,7 +182,7 @@ const ThreeScene: React.FC<{ onAngleSelect: (angle: number) => void }> = ({ onAn
             <Suspense fallback={null}>
               <SpotModel positionAngle={positionAngle} />
               <PyramidModel positionAngle={positionAngle} />
-              <Ground width={10} length={7} opacity={1}/>
+              <Ground width={10} length={7} opacity={0.9}/>
               <WindowModel />
               <EffectComposer>
                 <Bloom luminanceThreshold={1} luminanceSmoothing={1} height={0} />
@@ -208,7 +208,7 @@ const ThreeScene: React.FC<{ onAngleSelect: (angle: number) => void }> = ({ onAn
           ))}
         </div>
           <button className='bg-cyan-500 p-px text-white rounded-full px-2 py-2 shadow-md'>
-            Toggle Ground
+            Mostrar Suelo
           </button>
       </main>
   );
