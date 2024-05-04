@@ -28,7 +28,7 @@ const MobileNav = () => {
                 width={180}
                 height={28} 
             /> */}
-            <p className='text-dark-700 font-bold text-xl'>GAIALY</p>
+            <p className='text-dark-700 font-bold text-xl'>IQA INSIGHTS</p>
         </Link>
         <nav className='flex gap-2'>
             <SignedIn>

@@ -11,8 +11,8 @@ const IBMPlex = IBM_Plex_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Vasco Software",
-  description: "AI errors detector",
+  title: "Spot Detections",
+  description: "Enhancing Window Frame Inspection in Construction Sites",
 };
 
 export default function RootLayout({
