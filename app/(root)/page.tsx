@@ -36,7 +36,7 @@ const Home = async ({ searchParams }: SearchParamProps) => {
           ))}
         </ul>
       </section> */}
-      <RenderScene />
+        <RenderScene />
       <section className="mt-10">
         <Collection 
           hasSearch={true}

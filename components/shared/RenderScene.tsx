@@ -8,6 +8,9 @@ const RenderScene = () => {
 
   return (
     <section className='w-full'>
+      <div className="collection-heading">
+        <h2 className="h2-bold text-dark-600">Simulación 3D</h2>
+      </div>
         <ThreeScene onAngleSelect={setSelectedAngle} />
     </section>
   )

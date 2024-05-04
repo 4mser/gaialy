@@ -70,7 +70,7 @@ const PyramidModel: React.FC<{ positionAngle: number }> = ({ positionAngle }) =>
 
   return (
     <animated.mesh geometry={pyramidGeometry} material-opacity={opacity}>
-      <meshBasicMaterial color="cyan" transparent side={THREE.DoubleSide} />
+      <meshBasicMaterial color="red" transparent side={THREE.DoubleSide} />
     </animated.mesh>
   );
 };
@@ -172,8 +172,8 @@ const ThreeScene: React.FC<{ onAngleSelect: (angle: number) => void }> = ({ onAn
   const angleOptions = [-45, -30, -15, 0, 15, 30, 45];
 
   return (
-      <main className='rounded-[12px] border-2 border-purple-200/15 p-4 flex gap-5 flex-col'>
-        <div className=' w-full h-[70vw] md:h-[20vw] hover:cursor-grab rounded-[12px] border-2 border-purple-200/15 overflow-hidden'>
+      <main className='rounded-[15px] border-2 border-purple-200/15 p-5 flex gap-5 flex-col'>
+        <div className=' w-full h-[70vw] md:h-[20vw] hover:cursor-grab rounded-[12px] border-2 border-purple-200/15 overflow-hidden bg-gradient-to-tr from-sky-100 to-white'>
           <Canvas shadows camera={{ position: [0, 5, -10], fov: 60 }} >
             <ambientLight intensity={1.3} />
             <spotLight position={[0, 0, 0]} angle={1} penumbra={1} intensity={1} castShadow />
@@ -190,7 +190,7 @@ const ThreeScene: React.FC<{ onAngleSelect: (angle: number) => void }> = ({ onAn
                 <Vignette eskil={false} offset={0.001} darkness={1.1} />
               </EffectComposer>
             </Suspense>
-            <OrbitControls enablePan={false} enableZoom={true} enableRotate={true} />
+            <OrbitControls enablePan={false} enableZoom={true} enableRotate={true} minDistance={5} maxDistance={15} />
           </Canvas>
         </div>
         
@@ -201,13 +201,13 @@ const ThreeScene: React.FC<{ onAngleSelect: (angle: number) => void }> = ({ onAn
               whileHover={{ scale: 1.2 }}
               whileTap={{ scale: 1 }}
               onClick={() => handleClick(angle)}
-              className={`${displayAngle === angle ? 'bg-black' : 'bg-black/30'} shadow-md w-10 h-10 rounded-full  flex items-center justify-center text-white hover:cursor-pointer`}
+              className={`${displayAngle === angle ? 'bg-yellow-500' : 'bg-black/30'} shadow-md w-10 h-10 rounded-full  flex items-center justify-center text-white hover:cursor-pointer`}
             >
               {`${angle}°`}
             </motion.button>
           ))}
         </div>
-          <button className='bg-gradient-to-tr from-cyan-500 to-violet-300 p-px text-white rounded-xl px-2 py-2'>
+          <button className='bg-cyan-500 p-px text-white rounded-full px-2 py-2 shadow-md'>
             Toggle Ground
           </button>
       </main>
