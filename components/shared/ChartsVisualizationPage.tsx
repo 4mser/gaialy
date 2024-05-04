@@ -15,6 +15,9 @@ const VisualizationPage: React.FC = () => {
         <option value="Shading">Shading</option>
         <option value="Exposure">Exposure</option>
       </select>
+      <br />
+      <p className='py-2'>{`Average IQA Values for ${selection}`}</p>
+      <br />
       <ApexLineChart data={data} selection={selection} color="#4BCDF8"/>
     </div>
   );

@@ -38,20 +38,25 @@ const CombinedVisualizationPage: React.FC = () => {
     }, [weatherSelection, hourSelection]);
   
     return (
-      <div>
-        <select value={weatherSelection} onChange={e => setWeatherSelection(e.target.value)}>
-          <option value="Sunny">Sunny</option>
-          <option value="Cloudy">Cloudy</option>
-          <option value="Rainy">Rainy</option>
-        </select>
-        <select value={hourSelection} onChange={e => setHourSelection(e.target.value)}>
-          <option value="9-12AM">9-12AM</option>
-          <option value="12PM-3PM">12PM-3PM</option>
-          <option value="3PM-5PM">3PM-5PM</option>
-          <option value="5PM-Sunset">5PM-Sunset</option>
-        </select>
+      <section>
+        <div className='flex gap-3'>
+            <select value={hourSelection} onChange={e => setHourSelection(e.target.value)}>
+                <option value="9-12AM">9-12AM</option>
+                <option value="12PM-3PM">12PM-3PM</option>
+                <option value="3PM-5PM">3PM-5PM</option>
+                <option value="5PM-Sunset">5PM-Sunset</option>
+            </select>
+            <select value={weatherSelection} onChange={e => setWeatherSelection(e.target.value)}>
+                <option value="Sunny">Sunny</option>
+                <option value="Cloudy">Cloudy</option>
+                <option value="Rainy">Rainy</option>
+            </select>
+        </div>
+        <br />
+        <p className='py-2'>{`Average IQA Values for ${hourSelection} on a ${weatherSelection} Day`}</p>
+
         {isDataLoaded ? <ApexLineChart key={`${weatherSelection}-${hourSelection}`} data={{ 'Combined': combinedData }} selection='Combined' color="#FF0000" /> : null}
-      </div>
+      </section>
     );
   };
   

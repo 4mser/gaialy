@@ -64,7 +64,7 @@ const ApexLineChart: React.FC<ApexLineChartProps> = ({ data, selection, color })
         colors: [color]
       },
       title: {
-        text: `Average Values for ${selection}`,
+        // text: `Average Values for ${selection}`,
         align: 'center'
       },
       xaxis: {
@@ -80,7 +80,11 @@ const ApexLineChart: React.FC<ApexLineChartProps> = ({ data, selection, color })
         x: {
           show: true
         }
-      }
+      },
+      grid: {
+        borderColor: '#E2DEE7', // Cambia el color para mejorar la visibilidad
+        strokeDashArray: 5 // Líneas punteadas para una apariencia menos rígida
+      },
     }
   };
 
