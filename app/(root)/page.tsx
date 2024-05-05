@@ -1,6 +1,8 @@
 import VisualizationPage from "@/components/shared/ChartsVisualizationPage"
 import { Collection } from "@/components/shared/Collection"
+import CombinedHeatmap from "@/components/shared/CombinedHeatmap"
 import CombinedVisualizationPage from "@/components/shared/CombinedVisualizationPage"
+import HeatmapVisualization from "@/components/shared/HeatmapVisualization"
 import RenderScene from "@/components/shared/RenderScene"
 import ThreeScene from "@/components/shared/ThreeScene"
 import { navLinks } from "@/constants"
@@ -25,7 +27,9 @@ const Home = async ({ searchParams }: SearchParamProps) => {
         <br />
         <VisualizationPage />
         <br />
+        <HeatmapVisualization />
         <CombinedVisualizationPage />
+        <CombinedHeatmap />
       <section className="mt-10">
         <Collection 
           hasSearch={true}

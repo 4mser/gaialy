@@ -31,7 +31,7 @@ interface ApexLineChartProps {
     color: string;
 }
 
-const ApexLineChart: React.FC<ApexLineChartProps> = ({ data, selection, color }) => {
+const HeatMapChart: React.FC<ApexLineChartProps> = ({ data, selection, color }) => {
     const { categories, averages } = calculateAverages(data[selection]);
 
     // Redondeo a dos decimales directamente en la serie
@@ -47,7 +47,7 @@ const ApexLineChart: React.FC<ApexLineChartProps> = ({ data, selection, color })
         options: ApexOptions;
     } = {
         series: [{
-            name: 'IQA Value',
+            name: '',
             data: sortedData
         }],
         options: {
@@ -89,8 +89,8 @@ const ApexLineChart: React.FC<ApexLineChartProps> = ({ data, selection, color })
     };
 
     return (
-        <ReactApexChart options={chartData.options} series={chartData.series} type="line" height={350} />
+        <ReactApexChart options={chartData.options} series={chartData.series} type="heatmap" height={350} />
     );
 };
 
-export default ApexLineChart;
+export default HeatMapChart;
