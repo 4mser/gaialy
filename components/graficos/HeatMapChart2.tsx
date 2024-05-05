@@ -12,7 +12,7 @@ function calculateAverages(data: { [column: string]: number }[]): { categories: 
         });
     });
 
-    const categories = Object.keys(sums);
+    const categories = Object.keys(sums).sort((a, b) => parseInt(a) - parseInt(b));
     const averages = categories.map(key => sums[key] / counts[key]);
     return { categories, averages };
 }
@@ -33,17 +33,15 @@ interface ApexLineChartProps {
 
 const HeatMapChart2: React.FC<ApexLineChartProps> = ({ data, selection, color }) => {
     const { categories, averages } = calculateAverages(data[selection]);
-
-    // Redondeo a dos decimales directamente en la serie
     const formattedAverages = averages.map(avg => parseFloat(avg.toFixed(3)));
 
     const sortedData = categories.map((category, index) => ({
-        x: parseInt(category),
+        x: category, // Usar categorías directamente
         y: formattedAverages[index]
-    })).sort((a, b) => a.x - b.x);
+    }));
 
     const chartData: {
-        series: { name: string; data: { x: number; y: number }[] }[];
+        series: { name: string; data: { x: string; y: number }[] }[];
         options: ApexOptions;
     } = {
         series: [{
@@ -71,7 +69,8 @@ const HeatMapChart2: React.FC<ApexLineChartProps> = ({ data, selection, color })
                 align: 'center'
             },
             xaxis: {
-                type: 'category'
+                type: 'category',
+                categories: categories
             },
             yaxis: {
                 title: {
